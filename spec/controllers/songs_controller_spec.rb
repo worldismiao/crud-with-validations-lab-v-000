@@ -41,7 +41,6 @@ RSpec.describe SongsController, type: :controller do
 
   context "creating a valid song" do
     before { post(:create, { song: valid_attributes }) }
-
     it "creates a new Song" do
       expect(Song.count).to eq(1)
     end
@@ -51,9 +50,9 @@ RSpec.describe SongsController, type: :controller do
       expect(assigns(:song)).to be_persisted
     end
 
-    it "redirects to the created song" do
-      expect(response).to redirect_to(Song.last)
-    end
+    # it "redirects to the created song" do
+    #   expect(response).to redirect_to(Song.last)
+    # end
   end
 
   context "creating an invalid song" do
@@ -83,9 +82,9 @@ RSpec.describe SongsController, type: :controller do
       expect(song.title).to eq("Moon Safari")
     end
 
-    it "redirects to the song" do
-      expect(response).to redirect_to(song)
-    end
+    # it "redirects to the song" do
+    #   expect(response).to redirect_to(song)
+    # end
   end
 
   context "updating a song with invalid data" do
